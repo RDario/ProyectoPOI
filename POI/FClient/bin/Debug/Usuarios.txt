@@ -1,0 +1,5 @@
+Alejandro Loyola|alejandro.loyolagu@uanl.edu.mx|Contrasena123|..\..\img\alex.jpg
+Arturo|arturo@uanl.edu.mx|12345678|..\..\img\arturo.jpg
+Pedro Lopez|pedrolopez@uanl.edu.mx|12345678|..\..\img\arturo.jpg
+a|@|1|..\..\img\a.jpg
+q|alejandro.loyolagu@uanl.edu.mx|1|..\..\img\q.jpg

@@ -1,0 +1,53 @@
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\bin\Debug\FClient.exe
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\bin\Debug\FClient.pdb
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\FClient.Form1.resources
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\FClient.Properties.Resources.resources
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\FClient.exe
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\obj\x86\Debug\FClient.pdb
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\bin\Debug\POI.dll
+c:\users\128723\documents\visual studio 2010\Projects\POI\FClient\bin\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\FClient.exe
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\FClient.pdb
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.dll
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.Video.dll
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\POI.dll
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.xml
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.Video.xml
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\Alejandro\Desktop\POI\FClient\bin\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.chat.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.Form1.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.Form2.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.login.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.principal.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.exe
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.pdb
+C:\Users\Alejandro\Desktop\POI\FClient\obj\x86\Debug\FClient.Correo.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\FClient.exe
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\FClient.pdb
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.dll
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.Video.dll
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\POI.dll
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.xml
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.Video.xml
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\RubénDarío\Desktop\POI\FClient\bin\Debug\POI.pdb
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.csprojResolveAssemblyReference.cache
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.chat.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.Correo.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.Form1.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.Form2.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.login.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.principal.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.Properties.Resources.resources
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.csproj.GenerateResource.Cache
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.exe
+C:\Users\RubénDarío\Desktop\POI\FClient\obj\x86\Debug\FClient.pdb

@@ -1,0 +1,31 @@
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\bin\Debug\FServer.exe
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\bin\Debug\FServer.pdb
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\FServer.Form1.resources
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\FServer.Properties.Resources.resources
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\FServer.exe
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\obj\x86\Debug\FServer.pdb
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\bin\Debug\POI.dll
+c:\users\128723\documents\visual studio 2010\Projects\POI\FServer\bin\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\FServer\bin\Debug\FServer.exe
+C:\Users\Alejandro\Desktop\POI\FServer\bin\Debug\FServer.pdb
+C:\Users\Alejandro\Desktop\POI\FServer\bin\Debug\POI.dll
+C:\Users\Alejandro\Desktop\POI\FServer\bin\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.Form1.resources
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.Properties.Resources.resources
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.csproj.GenerateResource.Cache
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.exe
+C:\Users\Alejandro\Desktop\POI\FServer\obj\x86\Debug\FServer.pdb
+C:\Users\RubénDarío\Desktop\POI\FServer\bin\Debug\FServer.exe
+C:\Users\RubénDarío\Desktop\POI\FServer\bin\Debug\FServer.pdb
+C:\Users\RubénDarío\Desktop\POI\FServer\bin\Debug\POI.dll
+C:\Users\RubénDarío\Desktop\POI\FServer\bin\Debug\POI.pdb
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.csprojResolveAssemblyReference.cache
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.Form1.resources
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.Properties.Resources.resources
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.csproj.GenerateResource.Cache
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.exe
+C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.pdb

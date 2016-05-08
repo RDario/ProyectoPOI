@@ -1,0 +1,5 @@
+Inicio|alejandro.loyolagu@uanl.edu.mx|arturo@uanl.edu.mx|pedrolopez@uanl.edu.mx|@|q
+LMAD|alejandro.loyolagu@uanl.edu.mx|arturo@uanl.edu.mx|pedrolopez@uanl.edu.mx|@|q
+POI|alejandro.loyolagu@uanl.edu.mx|arturo@uanl.edu.mx|@
+VJ1|pedrolopez@uanl.edu.mx|alejandro.loyolagu@uanl.edu.mx|@
+BDM|pedrolopez@uanl.edu.mx|arturo@uanl.edu.mx|@

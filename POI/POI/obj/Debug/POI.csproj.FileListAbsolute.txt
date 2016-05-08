@@ -1,0 +1,15 @@
+c:\users\128723\documents\visual studio 2010\Projects\POI\POI\bin\Debug\POI.dll
+c:\users\128723\documents\visual studio 2010\Projects\POI\POI\bin\Debug\POI.pdb
+c:\users\128723\documents\visual studio 2010\Projects\POI\POI\obj\Debug\ResolveAssemblyReference.cache
+c:\users\128723\documents\visual studio 2010\Projects\POI\POI\obj\Debug\POI.dll
+c:\users\128723\documents\visual studio 2010\Projects\POI\POI\obj\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\POI\bin\Debug\POI.dll
+C:\Users\Alejandro\Desktop\POI\POI\bin\Debug\POI.pdb
+C:\Users\Alejandro\Desktop\POI\POI\obj\Debug\POI.csprojResolveAssemblyReference.cache
+C:\Users\Alejandro\Desktop\POI\POI\obj\Debug\POI.dll
+C:\Users\Alejandro\Desktop\POI\POI\obj\Debug\POI.pdb
+C:\Users\RubénDarío\Desktop\POI\POI\bin\Debug\POI.dll
+C:\Users\RubénDarío\Desktop\POI\POI\bin\Debug\POI.pdb
+C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.csprojResolveAssemblyReference.cache
+C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.dll
+C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.pdb
