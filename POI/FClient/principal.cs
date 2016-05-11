@@ -22,6 +22,7 @@ namespace FClient
         delegate void OnMessageDelegate(String msg, String para);
         delegate void OnComboDelegate(String msg);
         public static ArrayList chats = new ArrayList();
+        public static ArrayList chatsGrupales = new ArrayList();
         ArrayList Contacts = new ArrayList();
         ArrayList Groups = new ArrayList();
         int cuenta = 0;
@@ -49,14 +50,14 @@ namespace FClient
 
             }
         }
-        public void onFileRequest(String path,String name)
+        public void onFileRequest(String path, String name)
         {
-            if (MessageBox.Show("El usuario " + name + " quiere compartir el archivo "+path+ " contigo, ¿Aceptas?", "Transferencia de Archivo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("El usuario " + name + " quiere compartir el archivo " + path + " contigo, ¿Aceptas?", "Transferencia de Archivo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 mClient.descargaArchivo(path);
             }
         }
-        public void onWebcamEstablish(String ip,String usuario)
+        public void onWebcamEstablish(String ip, String usuario)
         {
             foreach (chat ch in chats)
             {
@@ -90,7 +91,7 @@ namespace FClient
             }
         }
         bool panelswitch = true;
-        public void onWallCallback(String muro, String usuario,String publicacion)
+        public void onWallCallback(String muro, String usuario, String publicacion)
         {
             if (InvokeRequired)
             {
@@ -182,8 +183,6 @@ namespace FClient
                     }
                 }
                 cuenta++;
-                
-
             }
         }
         public static IPAddress GetIPAddress(string hostName)
@@ -207,10 +206,7 @@ namespace FClient
             mClient.mPassword = contrasena;
             mClient.mImg = fotoperfil;
             mClient.connect();
-            //IPAddress = mClient.LocalEndPoint.Address;
-            //IPAddress miIP = GetIPAddress(Dns.GetHostName());
-            mClient.listening(onConversacionCallback, onMessageCallback, onWallCallback, onWebcamRequest, onWebcamEstablish, onFileRequest);
-
+            mClient.listening(onConversacionCallback, onMessageCallback, onWallCallback, onWebcamRequest, onWebcamEstablish, onFileRequest, onMessageCallback);
             String aux;
             aux = mClient.mName + '|' + mClient.mMail + '|' + mClient.mPassword + '|' + mClient.mImg;
             switch (state)
@@ -227,12 +223,13 @@ namespace FClient
             mClient.sendStringMsg(aux);
             InitializeComponent();
             createChats();
+            createChatsGrupales();
             tabControl1.TabPages.Remove(tabInicio);
             tabControl1.TabPages.Remove(tabLMAD);
             tabControl1.TabPages.Remove(tabPoi);
             tabControl1.TabPages.Remove(tabVj1);
             tabControl1.TabPages.Remove(tabBdm);
-            
+
         }
         public void cargaMuros(String elmuro)
         {
@@ -240,49 +237,44 @@ namespace FClient
             ypbdm = 20;
             ytin = 10;
             ypin = 20;
-            
+
             foreach (Grupo g in Groups)
             {
                 if (treeView1.SelectedNode.Text == g.nombre && g.nombre == elmuro)
-                foreach (Client c in g.integrantes)
-                {
-                                           
-                    if (c.mName == mClient.mName)
+                    foreach (Client c in g.integrantes)
                     {
-                        
-                        mClient.cargaMuro(elmuro);
-                        if (elmuro == "BDM")
+
+                        if (c.mName == mClient.mName)
                         {
-                            limpiaTabs();
-                            tabControl1.TabPages.Add(tabBdm);
-                            muroBDM.VerticalScroll.Value = 0;
+
+                            mClient.cargaMuro(elmuro);
+                            if (elmuro == "BDM")
+                            {
+                                limpiaTabs();
+                                tabControl1.TabPages.Add(tabBdm);
+                                muroBDM.VerticalScroll.Value = 0;
+                            }
+                            if (elmuro == "Inicio")
+                            {
+                                limpiaTabs();
+                                tabControl1.TabPages.Add(tabInicio);
+                                muroInicio.VerticalScroll.Value = 0;
+                            }
                         }
-                        if (elmuro == "Inicio")
-                        {
-                            limpiaTabs();
-                            tabControl1.TabPages.Add(tabInicio);
-                            muroInicio.VerticalScroll.Value = 0;
-                        }
-                        
-                        
                     }
-                }
             }
-            
         }
+
         public void createChats()
         {
             int n = 0;
             foreach (Client contact in Contacts)
             {
-
                 if (contact.mName != mClient.mName)
                 {
                     lvContactos.Items.Add(contact.mName, n);
                     imageList1.Images.Add(Image.FromFile(contact.mImg));
-
                     n++;
-
                     chat Chat2 = new chat(mClient, contact);
                     Chat2.Name = contact.mName;
                     Chat2.Text = contact.mName;
@@ -290,6 +282,20 @@ namespace FClient
                 }
             }
         }
+
+        public void createChatsGrupales()
+        {
+            int n = 0;
+            foreach (Grupo grupo in Groups)
+            {
+                lvContactos.Items.Add(grupo.nombre, n);
+                chat chatGrupal = new chat(mClient, grupo);
+                chatGrupal.Name = grupo.nombre;
+                chatGrupal.Text = grupo.nombre;
+                chatsGrupales.Add(chatGrupal);
+            }
+        }
+
         public void onContactListCallback(String msg)
         {
             if (lvContactos.InvokeRequired)
@@ -297,7 +303,8 @@ namespace FClient
                 onContactList callback = new onContactList(onContactListCallback);
                 this.Invoke(callback, new object[] { msg });
             }
-            else{
+            else
+            {
                 lvContactos.Items.Clear();
                 string[] infoDividida = msg.Split(new String[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -320,15 +327,6 @@ namespace FClient
                             break;
                         }
                     }
-                    /*String usuarios = "<Chatprivado>" +
-                        "<from>" +
-                        mClient.mName +
-                        "<from>" +
-                        "<to>"+
-                        nombretemp+
-                        "<to>"+
-                        "<Chatprivado>";
-                    mClient.sendStringMsg(usuarios);*/
                     break;
                 }
             }
@@ -342,13 +340,13 @@ namespace FClient
 
         private void principal_Load(object sender, EventArgs e)
         {
-            
+
             mClient.cargaMuro("Inicio");
             tabControl1.TabPages.Add(tabInicio);
             pbInicio.ImageLocation = mClient.mImg;
             pbInicio.ImageLocation = mClient.mImg;
             pbMedalla.Image = System.Drawing.Image.FromFile("..\\..\\img\\medalla_1.png");
-            
+
         }
 
         private void principal_FormClosing(object sender, FormClosingEventArgs e)
@@ -367,11 +365,11 @@ namespace FClient
         {
             if (treeView1.SelectedNode.Text == "Inicio")
             {
-                tabInicio.Text = "Alumnos de la Facultad de Ciencias Físico Matemáticas";
-                    foreach (Grupo g in Groups)
-                    {
-                        if(treeView1.SelectedNode.Text == g.nombre && g.nombre=="Inicio")
-                        
+                tabInicio.Text = "Inicio";
+                foreach (Grupo g in Groups)
+                {
+                    if (treeView1.SelectedNode.Text == g.nombre && g.nombre == "Inicio")
+
                         foreach (Client c in g.integrantes)
                         {
                             if (treeView1.SelectedNode != null)
@@ -386,20 +384,20 @@ namespace FClient
             else if (treeView1.SelectedNode.Text == "BDM")
             {
                 tabBdm.Text = "Base de Datos Multimedia";
-                    
-                        foreach (Grupo g in Groups)
+
+                foreach (Grupo g in Groups)
+                {
+                    if (treeView1.SelectedNode.Text == g.nombre && g.nombre == "BDM")
+                        foreach (Client c in g.integrantes)
                         {
-                            if (treeView1.SelectedNode.Text == g.nombre && g.nombre == "BDM")
-                            foreach (Client c in g.integrantes)
-                            {
-                                if (treeView1.SelectedNode != null)
-                                    if (c.mName == mClient.mName)
-                                    {
-                                        cargaMuros("BDM");
-                                    }
-                            }
+                            if (treeView1.SelectedNode != null)
+                                if (c.mName == mClient.mName)
+                                {
+                                    cargaMuros("BDM");
+                                }
                         }
                 }
+            }
 
             else if (treeView1.SelectedNode.Text == "POI")
             {
@@ -462,7 +460,8 @@ namespace FClient
                 premio();
             }
         }
-        private void premio(){
+        private void premio()
+        {
             if (contador == 4)
             {
                 MessageBox.Show("Has subido al nivel dos", "¡Felicidades!");
@@ -510,13 +509,27 @@ namespace FClient
 
         private void pbCorreo_Click(object sender, EventArgs e)
         {
-
         }
 
         private void chatInicio_Click(object sender, EventArgs e)
         {
 
+            string nombretemp = tabInicio.Text;
+            foreach (Grupo grupo in Groups)
+            {
+                if (grupo.nombre == nombretemp)
+                {
+                    foreach (chat chat in chatsGrupales)
+                    {
+                        if (chat.Text == grupo.nombre)
+                        {
+                            mClient.loadChatGrupal(mClient.mName, nombretemp, grupo.integrantes);
+                            chat.isChatGrupal = true;
+                            chat.Show();
+                        }
+                    }
+                }
+            }
         }
-       
     }
 }

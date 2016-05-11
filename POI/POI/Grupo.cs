@@ -10,11 +10,13 @@ namespace POI
     {
         public String nombre;
         public ArrayList integrantes;
-        private string p;
 
         public Grupo(string _nombre)
         {
             nombre = _nombre;
+        }
+
+        public Grupo(){
         }
     }
 }

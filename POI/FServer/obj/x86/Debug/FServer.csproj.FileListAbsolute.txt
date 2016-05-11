@@ -29,3 +29,13 @@ C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.Properties.Resou
 C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.csproj.GenerateResource.Cache
 C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.exe
 C:\Users\RubénDarío\Desktop\POI\FServer\obj\x86\Debug\FServer.pdb
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\bin\Debug\FServer.exe
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\bin\Debug\FServer.pdb
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\bin\Debug\POI.dll
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\bin\Debug\POI.pdb
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.csprojResolveAssemblyReference.cache
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.Form1.resources
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.Properties.Resources.resources
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.csproj.GenerateResource.Cache
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.exe
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\FServer\obj\x86\Debug\FServer.pdb

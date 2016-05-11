@@ -13,3 +13,7 @@ C:\Users\RubénDarío\Desktop\POI\POI\bin\Debug\POI.pdb
 C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.csprojResolveAssemblyReference.cache
 C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.dll
 C:\Users\RubénDarío\Desktop\POI\POI\obj\Debug\POI.pdb
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\POI\bin\Debug\POI.dll
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\POI\bin\Debug\POI.pdb
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\POI\obj\Debug\POI.dll
+C:\Users\RubénDarío\Documents\repositorios\ProyectoPOI\POI\POI\obj\Debug\POI.pdb

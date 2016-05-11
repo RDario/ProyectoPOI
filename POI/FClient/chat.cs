@@ -22,19 +22,18 @@ namespace FClient
     {
         Client mClient = new Client();
         Client otherClient = new Client();
+        Grupo mGrupo = new Grupo();
         delegate void OnMessageDelegate(String msg);
         delegate void comienzaWebcamDelegate(String msg);
         delegate void onConversacionDelegate(String msg);
         delegate void onFileDelegate(String msg);
         delegate void onClip(object lbl);
-
-       
+        public bool isChatGrupal = false;
         Thread Sender; // thread for sending images
         Thread Receiver; // thread for receiving images
         bool Closing = false; // true if form is to be quit
         byte[] ClosingBytes; // byte coding of this message
         ASCIIEncoding ByteConverter = new ASCIIEncoding(); // object to convert strings to byte arrays and other way
-
 
         //=========================================
         //-------------VideoLlamada------------------
@@ -97,11 +96,6 @@ namespace FClient
             else
             {
                 rTBChat1.AppendText(msg + "\n");
-
-                //LAB EMOTICONES
-                //si rTBChat1 contiene emoticones, reemplazalos por los hash (iconos)
-
-
             }
         }
 
@@ -127,7 +121,6 @@ namespace FClient
             else
             {
                 this.rTBChat1.Text = msg + "\n";
-                    
                 //emoticones
             }
         }
@@ -139,7 +132,6 @@ namespace FClient
         {
             InitializeComponent();
             mClient = mmClient;
-
             otherClient = ootherClient;
             lblNombre.Text = otherClient.mName;
             lblEstado.Text = otherClient.mEstado;
@@ -149,9 +141,26 @@ namespace FClient
             BuscarDispositivos();
         }
 
+        public chat(Client mmClient, Grupo grupo) {
+            InitializeComponent();
+            mClient = mmClient;
+            mGrupo = grupo;
+            lblNombre.Text = grupo.nombre;
+            otherClient.mName = grupo.nombre;
+            lblEstado.Text = "Activo";
+            optionList1.Visible = true;
+            BuscarDispositivos();
+        }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
-            mClient.sendMessageToClient(txtMessage.Text, otherClient.mName);
+            if (isChatGrupal)
+            {
+                mClient.sendGroupMessage(txtMessage.Text, otherClient.mName);
+            }
+            else {
+                mClient.sendMessageToClient(txtMessage.Text, otherClient.mName);
+            }
             txtMessage.Text = "";
         }
 
@@ -519,7 +528,6 @@ namespace FClient
         public void CargarDispositivos(FilterInfoCollection Dispositivos)
         {
             for (int i = 0; i < Dispositivos.Count; i++) ;
-
             cbxDispositivos.Items.Add(Dispositivos[0].Name.ToString());
             cbxDispositivos.Text = cbxDispositivos.Items[0].ToString();
 
@@ -548,7 +556,6 @@ namespace FClient
                     FuenteDeVideo.SignalToStop();
                     FuenteDeVideo = null;
                 }
-
         }
 
         public void Video_NuevoFrame(object sender, NewFrameEventArgs eventArgs)
@@ -578,7 +585,6 @@ namespace FClient
             }
 
             byte[] ErrorBuffer = new byte[100000000];
-
             ASCIIEncoding Decoder = new ASCIIEncoding();
             string ImageSizeString = Decoder.GetString(ImageSize).Replace("x", "");
 
@@ -591,9 +597,7 @@ namespace FClient
             }
 
             byte[] ImageFile = new byte[int.Parse(ImageSizeString)];
-
             stream.Read(ImageFile, 0, ImageFile.Length);
-
             MemoryStream temps = new MemoryStream();
 
             try
@@ -618,7 +622,5 @@ namespace FClient
             form.Name = "Principal";
             form.Show();
         }
-        
-        
     }
 }

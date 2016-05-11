@@ -23,9 +23,6 @@ namespace FClient
             InitializeComponent();
         }
 
-
-        
-
         private void Correo_Load(object sender, EventArgs e)
         {
         

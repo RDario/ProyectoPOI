@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Collections;
 
 
 namespace POI
@@ -21,31 +22,30 @@ namespace POI
         public String mName { get; set; }
         public String mMail { get; set; }
         public String mPassword { get; set; }
-        public String mImg{ get; set; }
+        public String mImg { get; set; }
         public String mEstado { get; set; }
         public IPAddress mIp;
-        public string encriptado{get;set;}
+        public string encriptado { get; set; }
         public Socket mSocket;
-        //Action<String> MsgCallback;
-       // Action<String> ComboCallback;
         Action<String> ContactsCallback;
         Action<String> WebcamCallback;
         Action<String, String> WebcamCallbackEstablish;
         Action<String, String> FileCallbackAccept;
         Action<String, String> ConversacionCallback;
         Action<String, String> MessageCallback;
-        Action<String, String,String> MuroCallback;
+        Action<String, String> GroupMessageCallback;
+        Action<String, String, String> MuroCallback;
         public Client()
         {
             mSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             mIsConnected = false;
-            
+
         }
         public Client(string mail)
         {
             mMail = mail;
         }
-        public Client(string name, string mail, string pass, string img,string estado)
+        public Client(string name, string mail, string pass, string img, string estado)
         {
             mName = name;
             mMail = mail;
@@ -53,7 +53,7 @@ namespace POI
             mImg = img;
             mEstado = estado;
         }
-        
+
         public Client(Socket socket)
         {
             mSocket = socket;
@@ -112,22 +112,22 @@ namespace POI
                 }
             }).Start();
         }
-        public void listening(Action<String, String> mConversacionCallback, Action<String, String> mMessageCallback, Action<String, String, String> mMuroCallback, Action<String> mOnWebcamCallback, Action<String,String> mOnWebcamCallbackEstablish,Action<String,String>mFileCallbackAccept)
+        public void listening(Action<String, String> mConversacionCallback, Action<String, String> mMessageCallback, Action<String, String, String> mMuroCallback, Action<String> mOnWebcamCallback, Action<String, String> mOnWebcamCallbackEstablish, Action<String, String> mFileCallbackAccept, Action<String, String> mGroupMessageCallback)
         {
             ConversacionCallback = mConversacionCallback;
             FileCallbackAccept = mFileCallbackAccept;
             WebcamCallback = mOnWebcamCallback;
             MessageCallback = mMessageCallback;
+            GroupMessageCallback = mGroupMessageCallback;
             MuroCallback = mMuroCallback;
             WebcamCallbackEstablish = mOnWebcamCallbackEstablish;
             mIsThreadRunning = true;
             new Thread(() =>
             {
                 while (mIsThreadRunning)
-                { 
+                {
                     byte[] bufferCmd = new byte[1024];
                     mSocket.Receive(bufferCmd);
-
                     bufferCmd = Utils.cleanBuffer(bufferCmd);
                     String cmd = Encoding.Default.GetString(bufferCmd);
                     #region coment
@@ -155,31 +155,29 @@ namespace POI
                         String name = Encoding.Default.GetString(bufferMessage);
                         ComboCallback.Invoke(name);
                     }*/
-#endregion
+                    #endregion
 
                     if (cmd.Contains("<IncomingChat>"))
                     {
-                        String[] sizeSplit = cmd.Split(new String[] { "<IncomingChat>", "<from>","<to>","<size>" }, StringSplitOptions.RemoveEmptyEntries);
+                        String[] sizeSplit = cmd.Split(new String[] { "<IncomingChat>", "<from>", "<to>", "<size>" }, StringSplitOptions.RemoveEmptyEntries);
                         int size = Int32.Parse(sizeSplit[2]);
                         string name1 = sizeSplit[0];
                         string name2 = sizeSplit[1];
-
                         byte[] bufferMessage = new byte[size];
                         mSocket.Receive(bufferMessage);
                         String conversacion = Encoding.Default.GetString(bufferMessage);
-                        ConversacionCallback.Invoke(name2,conversacion);
+                        ConversacionCallback.Invoke(name2, conversacion);
                     }
                     if (cmd.Contains("<IncomingMessage>"))
                     {
-                        String[] sizeSplit = cmd.Split(new String[] { "<IncomingMessage>", "<size>","<name>","<message>" }, StringSplitOptions.RemoveEmptyEntries);
+                        String[] sizeSplit = cmd.Split(new String[] { "<IncomingMessage>", "<size>", "<name>", "<message>" }, StringSplitOptions.RemoveEmptyEntries);
                         int size = Int32.Parse(sizeSplit[0]);
                         string name = sizeSplit[1];
                         string message = sizeSplit[2];
                         //byte[] bufferMessage = new byte[size];
                         //mSocket.Receive(bufferMessage);
-
                         //String message = Encoding.Default.GetString(bufferMessage);
-                        MessageCallback.Invoke(message,name);
+                        MessageCallback.Invoke(message, name);
                     }
                     if (cmd.Contains("<ActualizaMuro>"))
                     {
@@ -223,14 +221,14 @@ namespace POI
                         String newpath = "C:\\Users\\Alejandro\\Desktop\\POI\\FClient\\bin\\Debug\\Descargas\\" + nombreArchivo;
                         File.WriteAllBytes(newpath, bufferMessage);
                     }
-                    
+
                 }
             }).Start();
         }
+
         public void sendMessageToClient(String msg, String clientName)
         {
             //enviamos el comando y los parametros para que el servidor prepara la recepcion y envio del mensaje
-
             String sendCommand = "<SendMessage>";
             sendCommand += "<size>";
             sendCommand += Encoding.Default.GetBytes(msg).Length;
@@ -240,13 +238,24 @@ namespace POI
             sendCommand += "<to><message>" +
             msg + "<message>";
             sendCommand += "<SendMessage>";
-            //enviamos el comando
             sendStringMsg(sendCommand);
-            //enviamos el mensaje
-            //sendStringMsg(msg);
-
-           // MsgCallback.Invoke(msg);
         }
+
+        public void sendGroupMessage(String msg, String groupName)
+        {
+            //enviamos el comando y los parametros para que el servidor prepara la recepcion y envio del mensaje
+            String sendCommand = "<SendGroupMessage>";
+            sendCommand += "<size>";
+            sendCommand += Encoding.Default.GetBytes(msg).Length;
+            sendCommand += "<size>";
+            sendCommand += "<group>";
+            sendCommand += groupName;
+            sendCommand += "<group><message>" +
+            msg + "<message>";
+            sendCommand += "<SendGroupMessage>";
+            sendStringMsg(sendCommand);
+        }
+
         public void cargaMuro(String muro)
         {
             String sendCommand = "<CargaMuro>" +
@@ -254,7 +263,7 @@ namespace POI
             "<CargaMuro>";
             sendStringMsg(sendCommand);
         }
-        public void subeArchivo(String para,byte[] buffer,String path,long size)
+        public void subeArchivo(String para, byte[] buffer, String path, long size)
         {
             String sendCommand = "<MandaArchivo><path>" + path + "<path><size>" + size + "<size><nombre>" + para + "<nombre><MandaArchivo>";
             sendStringMsg(sendCommand);
@@ -305,24 +314,26 @@ namespace POI
             //enviamos el comando
             sendStringMsg(sendCommand);
         }
+
+        public void loadChatGrupal(String desdeCliente, String paraCliente, ArrayList integrantes)
+        {
+            String sendCommand = "<Chatgrupal>";
+            sendCommand += "<from>";
+            sendCommand += desdeCliente;
+            sendCommand += "<from>";
+            sendCommand += "<to>";
+            sendCommand += paraCliente;
+            sendCommand += "<to>";
+            sendCommand += "<Chatgrupal>";
+            //enviamos el comando
+            sendStringMsg(sendCommand);
+        }
+
         public void sendStringMsg(String msg)
         {
             // Convierte un String en arreglo de byte
-
-            //byte[] bufEnc = Encoding.Default.GetBytes(this.encriptado);
-                
             byte[] buffer = Encoding.Default.GetBytes(msg);
-            //String msg1;
-           // if (this.encriptado == "encriptado")
-           // {
-                //msg1=Utils.encriptar(msg);
-                //buffer = Encoding.Default.GetBytes(msg1);
-           // }
-            
-           // mSocket.Send(bufEnc);
             mSocket.Send(buffer);
         }
-
-
     }
 }

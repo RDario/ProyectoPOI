@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principal));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("POI", 1, 1);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("VJ1", 1, 1);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("BDM", 1, 1);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("LMAD", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("ASO", 1, 1);
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("POO", 1, 1);
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("LCC", 0, 0, new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Inicio", new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("POI", 1, 1);
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("VJ1", 1, 1);
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("BDM", 1, 1);
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("LMAD", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("ASO", 1, 1);
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("POO", 1, 1);
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("LCC", 0, 0, new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14});
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Inicio", new System.Windows.Forms.TreeNode[] {
+            treeNode12,
+            treeNode15});
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabInicio = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -141,7 +141,7 @@
             this.tabInicio.Padding = new System.Windows.Forms.Padding(3);
             this.tabInicio.Size = new System.Drawing.Size(457, 503);
             this.tabInicio.TabIndex = 0;
-            this.tabInicio.Text = "Alumnos de la Facultad de Ciencias Físico Matemáticas";
+            this.tabInicio.Text = "Inicio";
             this.tabInicio.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -350,38 +350,38 @@
             this.treeView1.ImageList = this.imageList2;
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            treeNode1.ImageIndex = 1;
-            treeNode1.Name = "treePOI";
-            treeNode1.SelectedImageIndex = 1;
-            treeNode1.Text = "POI";
-            treeNode2.ImageIndex = 1;
-            treeNode2.Name = "treeVJ1";
-            treeNode2.SelectedImageIndex = 1;
-            treeNode2.Text = "VJ1";
-            treeNode3.ImageIndex = 1;
-            treeNode3.Name = "treeBDM";
-            treeNode3.SelectedImageIndex = 1;
-            treeNode3.Text = "BDM";
-            treeNode4.ImageIndex = 0;
-            treeNode4.Name = "treeLMAD";
-            treeNode4.Text = "LMAD";
-            treeNode5.ImageIndex = 1;
-            treeNode5.Name = "Nodo2";
-            treeNode5.SelectedImageIndex = 1;
-            treeNode5.Text = "ASO";
-            treeNode6.ImageIndex = 1;
-            treeNode6.Name = "Nodo1";
-            treeNode6.SelectedImageIndex = 1;
-            treeNode6.Text = "POO";
-            treeNode7.ImageIndex = 0;
-            treeNode7.Name = "Nodo0";
-            treeNode7.SelectedImageIndex = 0;
-            treeNode7.Text = "LCC";
-            treeNode8.ImageKey = "folder.png";
-            treeNode8.Name = "treeFCFM";
-            treeNode8.Text = "Inicio";
+            treeNode9.ImageIndex = 1;
+            treeNode9.Name = "treePOI";
+            treeNode9.SelectedImageIndex = 1;
+            treeNode9.Text = "POI";
+            treeNode10.ImageIndex = 1;
+            treeNode10.Name = "treeVJ1";
+            treeNode10.SelectedImageIndex = 1;
+            treeNode10.Text = "VJ1";
+            treeNode11.ImageIndex = 1;
+            treeNode11.Name = "treeBDM";
+            treeNode11.SelectedImageIndex = 1;
+            treeNode11.Text = "BDM";
+            treeNode12.ImageIndex = 0;
+            treeNode12.Name = "treeLMAD";
+            treeNode12.Text = "LMAD";
+            treeNode13.ImageIndex = 1;
+            treeNode13.Name = "Nodo2";
+            treeNode13.SelectedImageIndex = 1;
+            treeNode13.Text = "ASO";
+            treeNode14.ImageIndex = 1;
+            treeNode14.Name = "Nodo1";
+            treeNode14.SelectedImageIndex = 1;
+            treeNode14.Text = "POO";
+            treeNode15.ImageIndex = 0;
+            treeNode15.Name = "Nodo0";
+            treeNode15.SelectedImageIndex = 0;
+            treeNode15.Text = "LCC";
+            treeNode16.ImageKey = "folder.png";
+            treeNode16.Name = "treeFCFM";
+            treeNode16.Text = "Inicio";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8});
+            treeNode16});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(128, 98);
             this.treeView1.TabIndex = 3;

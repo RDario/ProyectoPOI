@@ -24,9 +24,8 @@ namespace FServer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
         }
+
         delegate void OnClientConnectedDelegate(Client client);
 
         public void onClientConnected(Client client)
